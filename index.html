@@ -16,8 +16,7 @@
             background: #050508;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden; /* Fixes potential horizontal scroll bugs */
-            /* Space Background */
+            overflow-x: hidden;
             background-image: 
                 radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 100px 150px, #fff, rgba(0,0,0,0)),
@@ -38,7 +37,6 @@
             text-align: center;
         }
 
-        /* Entrance Animations */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -81,7 +79,6 @@
             border: 1px solid rgba(255, 75, 75, 0.3);
         }
 
-        /* Video Wrapper */
         .video-wrapper {
             width: 100%;
             background: #000;
@@ -100,7 +97,6 @@
             display: block;
         }
 
-        /* Fixed Character Section - No Glow, White Text */
         .character-profile {
             margin-bottom: 60px;
             padding: 30px;
@@ -113,22 +109,19 @@
         }
 
         .character-img {
-            width: 150px;
+            width: 120px;
             height: auto;
             margin-bottom: 20px;
-            filter: none; /* Glow removed */
         }
 
         .character-name {
             font-size: 1.8rem;
             font-weight: 700;
             margin: 5px 0;
-            color: #ffffff; /* Text set to white */
         }
 
         .placeholder-text {
-            color: #ffffff; /* Text set to white */
-            opacity: 0.8;
+            color: rgba(255,255,255,0.8);
             font-size: 1.1rem;
             margin-top: 5px;
         }
@@ -137,15 +130,15 @@
             background: rgba(15, 15, 20, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 24px;
-            padding: 40px;
+            padding: 30px;
             text-align: left;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
         .content-card h2 {
             margin-top: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -156,32 +149,41 @@
 
         .history-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin: 25px 0;
         }
 
         .history-item {
             background: rgba(255,255,255,0.03);
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border: 1px solid rgba(255,255,255,0.05);
         }
 
         .history-item i {
-            margin-right: 8px;
-            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: #00f2ff;
         }
 
         .highlight { color: #fff; font-weight: 600; }
 
         footer {
-            margin-top: 80px;
+            margin-top: 60px;
             padding-bottom: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #555;
             letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive tweak */
+        @media (max-width: 600px) {
+            .content-card { padding: 20px; }
+            .history-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -192,7 +194,7 @@
             <span class="presents">Jumpman64 Presents</span>
             <h1>Fredrick 4</h1>
             <div class="demo-badge">
-                <i class="fas fa-flask"></i> DEMO VERSION: NOT FINAL CONTENT
+                <i class="fas fa-flask"></i> DEMO: ALPHA BUILD
             </div>
         </header>
 
@@ -206,33 +208,44 @@
         <div class="character-profile reveal" style="animation-delay: 0.3s;">
             <img src="https://raw.githubusercontent.com/code-andrewy/Games1232/refs/heads/main/close.svg" alt="Fredrick" class="character-img">
             <div class="character-name">Fredrick</div>
-            <p class="placeholder-text">Hello, creator of Jumpman64 and Fredrick here. I hope you enjoyed that teaser video!</p>
+            <p class="placeholder-text">Hi, the owner of Jumpman64 and the creator of the Fredrick games </p>
         </div>
 
         <article class="content-card reveal" style="animation-delay: 0.4s;">
             <h2><i class="fas fa-rocket icon-blue"></i> The Fredrick Legacy</h2>
             <p>
-                The Fredrick series started in late 2024. Today, Fredrick is a <span class="highlight">"big boy"</span> he’s 
-                now two years old and has traveled to universes across the land. He’s evolved from a pet you feed into a hero saving a starship.
+                Launched in 2024, the Fredrick series has evolved from a simple pet simulator into an epic space adventure.
             </p>
             
             <div class="history-grid">
-                <div class="history-item"><i class="fas fa-cookie-bite"></i> <strong>The OG:</strong> Feed him to live.</div>
-                <div class="history-item"><i class="fas fa-ghost"></i> <strong>The Maze:</strong> Pac-Man Style.</div>
-                <div class="history-item"><i class="fas fa-circle-exclamation"></i> <strong>The Spikes:</strong> Dodge or die.</div>
+                <div class="history-item">
+                    <i class="fas fa-cookie-bite"></i>
+                    <strong>Fredrick 1: The Clicker</strong>
+                    <p>Feed Fredrick to earn points. Features a shop for better snacks, auto-clickers, and persistent saving.</p>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-ghost"></i>
+                    <strong>Fredrick 2: Emoji Chase</strong>
+                    <p>A fast-paced grid survival game. Collect coins and stars while dodging predators in a 60-second race.</p>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-circle-exclamation"></i>
+                    <strong>Fredrick 3: Dodge</strong>
+                    <p>Test your reflexes by dodging falling spikes. Survive long enough to earn medals and temporary invincibility.</p>
+                </div>
             </div>
 
             <p>
-                In <strong>Fredrick 4</strong>, he defends the galaxy with incredible new powers:
+                In <strong>Fredrick 4</strong>, take control of the galaxy with new combat mechanics:
             </p>
             <p>
-                <i class="fas fa-crosshairs icon-blue"></i> <span class="highlight">Head-Bullets:</span> Fire projectiles directly out of his head!<br>
-                <i class="fas fa-utensils icon-gold"></i> <span class="highlight">Crunch Mode:</span> Devour asteroids for a massive time boost!
+                <i class="fas fa-crosshairs icon-blue"></i> <span class="highlight">Head-Bullets:</span> Integrated cranial weaponry.<br>
+                <i class="fas fa-utensils icon-gold"></i> <span class="highlight">Crunch Mode:</span> Transform asteroids into fuel and time.
             </p>
         </article>
 
         <footer class="reveal" style="animation-delay: 0.6s;">
-            &copy; 2025 JUMPMAN64 | <i class="fas fa-star"></i> CELEBRATING 2 YEARS
+            &copy; 2025 JUMPMAN64 | <i class="fas fa-star"></i> TWO YEARS OF INNOVATION
         </footer>
     </div>
 
