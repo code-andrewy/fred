@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fredrick 4 | Official Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #050508;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Fixes potential horizontal scroll bugs */
+            /* Space Background */
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 100px 150px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 300px, #ddd, rgba(0,0,0,0));
+            background-size: 350px 350px;
+            animation: starsMove 150s linear infinite;
+        }
+
+        @keyframes starsMove {
+            from { background-position: 0 0; }
+            to { background-position: 0 1000px; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Entrance Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header { margin-bottom: 40px; }
+
+        .presents {
+            letter-spacing: 10px;
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .demo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 75, 75, 0.15);
+            color: #ff4b4b;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 75, 75, 0.3);
+        }
+
+        /* Video Wrapper */
+        .video-wrapper {
+            width: 100%;
+            background: #000;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            margin: 30px 0 40px 0;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Fixed Character Section - No Glow, White Text */
+        .character-profile {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .character-img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: none; /* Glow removed */
+        }
+
+        .character-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 5px 0;
+            color: #ffffff; /* Text set to white */
+        }
+
+        .placeholder-text {
+            color: #ffffff; /* Text set to white */
+            opacity: 0.8;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .content-card {
+            background: rgba(15, 15, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.8;
+        }
+
+        .content-card h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-blue { color: #00f2ff; }
+        .icon-gold { color: #ffae00; }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .history-item {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .history-item i {
+            margin-right: 8px;
+            color: #888;
+        }
+
+        .highlight { color: #fff; font-weight: 600; }
+
+        footer {
+            margin-top: 80px;
+            padding-bottom: 40px;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="reveal">
+            <span class="presents">Jumpman64 Presents</span>
+            <h1>Fredrick 4</h1>
+            <div class="demo-badge">
+                <i class="fas fa-flask"></i> DEMO VERSION: NOT FINAL CONTENT
+            </div>
+        </header>
+
+        <div class="video-wrapper reveal" style="animation-delay: 0.2s;">
+            <video controls preload="metadata">
+                <source src="https://ia601607.us.archive.org/15/items/trailer_202512/Trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="character-profile reveal" style="animation-delay: 0.3s;">
+            <img src="https://raw.githubusercontent.com/code-andrewy/Games1232/refs/heads/main/close.svg" alt="Fredrick" class="character-img">
+            <div class="character-name">Fredrick</div>
+            <p class="placeholder-text">Hello, creator of Jumpman64 and Fredrick here. I hope you enjoyed that teaser video!</p>
+        </div>
+
+        <article class="content-card reveal" style="animation-delay: 0.4s;">
+            <h2><i class="fas fa-rocket icon-blue"></i> The Fredrick Legacy</h2>
+            <p>
+                The Fredrick series started in late 2024. Today, Fredrick is a <span class="highlight">"big boy"</span> he’s 
+                now two years old and has traveled to universes across the land. He’s evolved from a pet you feed into a hero saving a starship.
+            </p>
+            
+            <div class="history-grid">
+                <div class="history-item"><i class="fas fa-cookie-bite"></i> <strong>The OG:</strong> Feed him to live.</div>
+                <div class="history-item"><i class="fas fa-ghost"></i> <strong>The Maze:</strong> Pac-Man Style.</div>
+                <div class="history-item"><i class="fas fa-circle-exclamation"></i> <strong>The Spikes:</strong> Dodge or die.</div>
+            </div>
+
+            <p>
+                In <strong>Fredrick 4</strong>, he defends the galaxy with incredible new powers:
+            </p>
+            <p>
+                <i class="fas fa-crosshairs icon-blue"></i> <span class="highlight">Head-Bullets:</span> Fire projectiles directly out of his head!<br>
+                <i class="fas fa-utensils icon-gold"></i> <span class="highlight">Crunch Mode:</span> Devour asteroids for a massive time boost!
+            </p>
+        </article>
+
+        <footer class="reveal" style="animation-delay: 0.6s;">
+            &copy; 2025 JUMPMAN64 | <i class="fas fa-star"></i> CELEBRATING 2 YEARS
+        </footer>
+    </div>
+
+</body>
+</html>
